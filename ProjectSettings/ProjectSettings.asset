@@ -12,7 +12,7 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: DefaultCompany
+  companyName: DRZRcomp
   productName: TriviaGame
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
@@ -134,7 +134,10 @@ PlayerSettings:
   vulkanEnableCommandBufferRecycling: 1
   loadStoreDebugModeEnabled: 0
   bundleVersion: 0.1
-  preloadedAssets: []
+  preloadedAssets:
+  - {fileID: 11400000, guid: 392b5708738110c47bc642e28ca7d39f, type: 2}
+  - {fileID: 11400000, guid: 0c9d5cb685746ef4abdcb94ec3a3d668, type: 2}
+  - {fileID: -4072254487148886636, guid: c09690aeba3c9dc448f3dfaebbb61853, type: 2}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -154,7 +157,7 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
-    Standalone: com.DefaultCompany.TriviaGame
+    Standalone: com.DRZRcomp.TriviaGame
   buildNumber:
     Standalone: 0
     VisionOS: 0
