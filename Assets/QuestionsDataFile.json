@@ -1,0 +1,54 @@
+{
+    "questions":[
+        {
+            "question": "¿Cuál es la capital de España?",
+            "options": ["Londres", "Madrid", "París", "Roma"],
+            "correctOptionIndex": 1
+        },
+        {
+            "question": "¿Cuál es el río más largo del mundo?",
+            "options": ["Río Nilo", "Río Amazonas", "Río Yangtsé", "Río Misisipi"],
+            "correctOptionIndex": 0
+        },
+        {
+            "question": "¿Cuál es el símbolo químico del oxígeno?",
+            "options": ["Ox", "O", "Oxg", "Oxy"],
+            "correctOptionIndex": 1
+        },
+        {
+            "question": "¿Quién escribió 'Cien años de soledad'?",
+            "options": ["Julio Cortázar", "Pablo Neruda", "Gabriel García Márquez", "Mario Vargas Llosa"],
+            "correctOptionIndex": 2
+        },
+        {
+            "question": "¿Cuál es el planeta más cercano al Sol?",
+            "options": ["Tierra", "Venus", "Marte", "Mercurio"],
+            "correctOptionIndex": 3
+        },
+        {
+            "question": "¿Cuál es el componente principal del aire?",
+            "options": ["Nitrógeno", "Oxígeno", "Dióxido de carbono", "Argón"],
+            "correctOptionIndex": 0
+        },
+        {
+            "question": "¿Quién pintó la 'Mona Lisa'?",
+            "options": ["Vincent van Gogh", "Pablo Picasso", "Leonardo da Vinci", "Rembrandt"],
+            "correctOptionIndex": 2
+        },
+        {
+            "question": "¿Cuál es el metal más abundante en la corteza terrestre?",
+            "options": ["Oro", "Plata", "Hierro", "Aluminio"],
+            "correctOptionIndex": 3
+        },
+        {
+            "question": "¿En qué año se fundó la Organización de las Naciones Unidas (ONU)?",
+            "options": ["1945", "1955", "1935", "1965"],
+            "correctOptionIndex": 0
+        },
+        {
+            "question": "¿Quién fue el primer ser humano en llegar a la Luna?",
+            "options": ["Yuri Gagarin", "Neil Armstrong", "Buzz Aldrin", "John Glenn"],
+            "correctOptionIndex": 1
+        }
+    ]
+}
