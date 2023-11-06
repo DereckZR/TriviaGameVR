@@ -12,7 +12,7 @@ public class TriviaManager : MonoBehaviour
     [SerializeField] GameObject[] buttonsUI;
     [SerializeField] TextMeshProUGUI[] answersUI;
     private int index;
-    [SerializeField] float delay = 3.0f;
+    [SerializeField] float delay = 2.0f;
     List<TriviaQuestion> questions = new List<TriviaQuestion>();
 
     private void Start() 

@@ -262,7 +262,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 27831264}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1995279033}
+        m_TargetAssemblyTypeName: TriviaManager, Assembly-CSharp
+        m_MethodName: GetResponse
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &27831264
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -514,7 +526,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 646547083}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1995279033}
+        m_TargetAssemblyTypeName: TriviaManager, Assembly-CSharp
+        m_MethodName: GetResponse
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &646547083
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1849,7 +1873,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1976535465}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1995279033}
+        m_TargetAssemblyTypeName: TriviaManager, Assembly-CSharp
+        m_MethodName: GetResponse
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1976535465
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2039,6 +2075,7 @@ GameObject:
   - component: {fileID: 1995279031}
   - component: {fileID: 1995279030}
   - component: {fileID: 1995279032}
+  - component: {fileID: 1995279033}
   m_Layer: 0
   m_Name: CanvasScreenZTV
   m_TagString: Untagged
@@ -2135,6 +2172,30 @@ MonoBehaviour:
     m_Bits: 4294967295
   pointer: {fileID: 709371234}
   sortOrder: 0
+--- !u!114 &1995279033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1995279027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b913b82a0549d9d48abc6f29711ee9b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  questionUI: {fileID: 1825126379}
+  buttonsUI:
+  - {fileID: 646547080}
+  - {fileID: 27831261}
+  - {fileID: 1976535462}
+  - {fileID: 2110001252}
+  answersUI:
+  - {fileID: 797091945}
+  - {fileID: 1546831633}
+  - {fileID: 1220331274}
+  - {fileID: 686826646}
+  delay: 2
 --- !u!4 &1998261540 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4453513310108136, guid: 835e735ca71bf78459fb2cababd74112, type: 3}
@@ -2284,7 +2345,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2110001255}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1995279033}
+        m_TargetAssemblyTypeName: TriviaManager, Assembly-CSharp
+        m_MethodName: GetResponse
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2110001255
 MonoBehaviour:
   m_ObjectHideFlags: 0
