@@ -29,14 +29,23 @@ public class TriviaManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI[] answersUI;
     private int index;
     [SerializeField] float delay = 2.0f;
+    [SerializeField] GameObject ZTV;
     Rigidbody rb;
-
-    //[SerializeField] GameObject finalScreen;
+    bool playerLost;
+    [SerializeField] GameObject happyFace;
+    [SerializeField] GameObject sadFace;
+    [SerializeField] GameObject triviaScreen;
+    bool oscilation;
     //[SerializeField] TextMeshProUGUI finalText;
 
     private void Start() 
     {
-        rb = transform.GetComponent<Rigidbody>();
+        happyFace.SetActive(false);
+        sadFace.SetActive(false);
+        rb = ZTV.GetComponent<Rigidbody>();
+        rb.useGravity = false;
+        playerLost = false;
+        oscilation = false;
         myQuestionList = JsonUtility.FromJson<QuestionList>(jsonTXT.text);
         GetNewQuestion();
         playerManager = player.GetComponent<PlayerManager>();
@@ -44,6 +53,28 @@ public class TriviaManager : MonoBehaviour
         //finalScreen.SetActive(false);
     }
 
+    private void Update() {
+        Lose();
+        ZTVidleanimation();
+    }
+    private void ZTVidleanimation()
+    {
+        if(!playerLost)
+        {
+            if(oscilation)
+            {
+                ZTV.transform.localPosition = 
+                    Vector3.Lerp(ZTV.transform.localPosition, new Vector3(0,0.05f,0), 1f * Time.deltaTime);
+                if(ZTV.transform.localPosition.y >= 0.04f) oscilation = !oscilation;
+            }
+            else
+            {
+                ZTV.transform.localPosition = 
+                    Vector3.Lerp(ZTV.transform.localPosition, new Vector3(0,-0.05f,0), 1f * Time.deltaTime);
+                if(ZTV.transform.localPosition.y <= -0.04f) oscilation = !oscilation;
+            }
+        }
+    }
     private void GetNewQuestion()
     {
         
@@ -75,8 +106,9 @@ public class TriviaManager : MonoBehaviour
             playerManager.TakeDamage(bossManager.GetDamage());
             if(playerManager.GetCurrentHealth() <= 0)
             {
-                rb.constraints &= ~RigidbodyConstraints.FreezePositionY;
-                rb.AddForce(Vector3.forward * 10f, ForceMode.Impulse);
+                throwZTV();
+                //rb.constraints &= ~RigidbodyConstraints.FreezePositionY;
+                //ZTV.transform.localRotation = Quaternion.Euler(100,0,-180);
                 //finalScreen.SetActive(true);
                 //finalText.text = "LOSE";
             }
@@ -102,5 +134,29 @@ public class TriviaManager : MonoBehaviour
 
         buttonsUI[indexResponse].GetComponent<Image>().color = Color.white;
         GetNewQuestion();
+    }
+
+    private void throwZTV(){
+        playerLost = true;
+        rb.useGravity = true;
+        rb.AddForce(new Vector3(0,5,1), ForceMode.Impulse);
+        sadFace.SetActive(true);
+        triviaScreen.SetActive(false);
+    }
+
+    private void Lose()
+    {
+        if(playerLost)
+        {
+            ZTV.transform.localRotation = 
+                Quaternion.Lerp(
+                    ZTV.transform.localRotation, 
+                    Quaternion.Euler(90, 0, 0), 
+                    3 * Time.deltaTime);
+            if(ZTV.transform.localRotation.x >= 80)
+            {
+                playerLost = false;
+            }
+        }
     }
 }
