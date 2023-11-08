@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ZTVManager : MonoBehaviour
 {
-    private void Update() {
-        
+    private void OnTriggerEnter(Collider other) {
+        Debug.Log(other.name);
     }
 }
