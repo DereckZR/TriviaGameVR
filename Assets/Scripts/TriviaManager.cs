@@ -9,8 +9,12 @@ using Unity.VisualScripting;
 
 public class TriviaManager : MonoBehaviour
 {
-    [SerializeField]
-    TextAsset TXTjson;
+    [SerializeField] TextAsset jsonTXT;
+
+    [SerializeField] GameObject player;
+    PlayerManager playerManager;
+    [SerializeField] GameObject boss;
+    BossManager bossManager;
 
     [System.Serializable]
     public class QuestionList
@@ -20,27 +24,29 @@ public class TriviaManager : MonoBehaviour
 
     public QuestionList myQuestionList = new QuestionList();
 
-    private void Start() 
-    {
-        myQuestionList = JsonUtility.FromJson<QuestionList>(TXTjson.text);
-        GetNewQuestion();
-    }
-
     [SerializeField] TextMeshProUGUI questionUI;
     [SerializeField] GameObject[] buttonsUI;
     [SerializeField] TextMeshProUGUI[] answersUI;
     private int index;
     [SerializeField] float delay = 2.0f;
-    //List<TriviaQuestion> questions = new List<TriviaQuestion>();
+    Rigidbody rb;
 
-    /*private void Start() 
+    //[SerializeField] GameObject finalScreen;
+    //[SerializeField] TextMeshProUGUI finalText;
+
+    private void Start() 
     {
-        questions = FileHandler.ReadFromJSON<TriviaQuestion>("QuestionsDataFile.json");
+        rb = transform.GetComponent<Rigidbody>();
+        myQuestionList = JsonUtility.FromJson<QuestionList>(jsonTXT.text);
         GetNewQuestion();
-    }*/
+        playerManager = player.GetComponent<PlayerManager>();
+        bossManager = boss.GetComponent<BossManager>();
+        //finalScreen.SetActive(false);
+    }
 
     private void GetNewQuestion()
     {
+        
         System.Random random = new System.Random();
         index = random.Next(0, myQuestionList.questions.Length);
         questionUI.text = myQuestionList.questions[index].question;
@@ -55,26 +61,45 @@ public class TriviaManager : MonoBehaviour
         if(myQuestionList.questions[index].correctOptionIndex == indexResponse)
         {
             Debug.Log("correct");
+            bossManager.TakeDamage(playerManager.GetDamage());
+            if(bossManager.GetCurrentHealth() <= 0)
+            {
+                //finalScreen.SetActive(true);
+                //finalText.text = "WIN";
+            }
             StartCoroutine(DelayedGetNewQuestion(Color.green, indexResponse));
         }
         else 
         {
             Debug.Log("wrong");
+            playerManager.TakeDamage(bossManager.GetDamage());
+            if(playerManager.GetCurrentHealth() <= 0)
+            {
+                rb.constraints &= ~RigidbodyConstraints.FreezePositionY;
+                rb.AddForce(Vector3.forward * 10f, ForceMode.Impulse);
+                //finalScreen.SetActive(true);
+                //finalText.text = "LOSE";
+            }
             StartCoroutine(DelayedGetNewQuestion(Color.red, indexResponse));
         }
     }
     private IEnumerator DelayedGetNewQuestion(Color color, int indexResponse)
     {
+        //Desactivar opciones
         foreach (var button in buttonsUI)
         {
             button.GetComponent<Button>().enabled = false;
         }
+
         buttonsUI[indexResponse].GetComponent<Image>().color = color;
         yield return new WaitForSeconds(delay);
+
+        //Reactivar opciones
         foreach (var button in buttonsUI)
         {
             button.GetComponent<Button>().enabled = true;
         }
+
         buttonsUI[indexResponse].GetComponent<Image>().color = Color.white;
         GetNewQuestion();
     }

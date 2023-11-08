@@ -1,0 +1,11 @@
+{
+    "player" : [
+        {
+            "Health": 0.0,
+            "Damage": 0.0,
+            "Money": 0
+            
+        }
+
+    ]
+}
