@@ -10,20 +10,16 @@ using Unity.VisualScripting;
 public class TriviaManager : MonoBehaviour
 {
     [SerializeField] TextAsset jsonTXT;
-
     [SerializeField] GameObject player;
     PlayerManager playerManager;
     [SerializeField] GameObject boss;
     BossManager bossManager;
-
     [System.Serializable]
     public class QuestionList
     {
         public TriviaQuestion[] questions;
     }
-
     public QuestionList myQuestionList = new QuestionList();
-
     [SerializeField] TextMeshProUGUI questionUI;
     [SerializeField] GameObject[] buttonsUI;
     [SerializeField] TextMeshProUGUI[] answersUI;
@@ -36,6 +32,15 @@ public class TriviaManager : MonoBehaviour
     [SerializeField] GameObject sadFace;
     [SerializeField] GameObject triviaScreen;
     bool oscilation;
+    [SerializeField] Animator bossAnimator;
+    public static class BossActions
+    {
+        public const string 
+        IsAttack = "IsAttack",
+        IsDefeated = "IsDefeated",
+        IsDamaged = "IsDamaged";
+        
+    }
     //[SerializeField] TextMeshProUGUI finalText;
 
     private void Start() 
@@ -92,27 +97,18 @@ public class TriviaManager : MonoBehaviour
         if(myQuestionList.questions[index].correctOptionIndex == indexResponse)
         {
             Debug.Log("correct");
+            bossAnimator.SetBool(BossActions.IsDamaged, true);
             bossManager.TakeDamage(playerManager.GetDamage());
-            if(bossManager.GetCurrentHealth() <= 0)
-            {
-                //finalScreen.SetActive(true);
-                //finalText.text = "WIN";
-            }
-            StartCoroutine(DelayedGetNewQuestion(Color.green, indexResponse));
+            if(bossManager.GetCurrentHealth() <= 0) DefeatBoss();
+            else StartCoroutine(DelayedGetNewQuestion(Color.green, indexResponse));
         }
-        else 
+        else
         {
             Debug.Log("wrong");
+            bossAnimator.SetBool(BossActions.IsAttack, true);
             playerManager.TakeDamage(bossManager.GetDamage());
-            if(playerManager.GetCurrentHealth() <= 0)
-            {
-                throwZTV();
-                //rb.constraints &= ~RigidbodyConstraints.FreezePositionY;
-                //ZTV.transform.localRotation = Quaternion.Euler(100,0,-180);
-                //finalScreen.SetActive(true);
-                //finalText.text = "LOSE";
-            }
-            StartCoroutine(DelayedGetNewQuestion(Color.red, indexResponse));
+            if(playerManager.GetCurrentHealth() <= 0) ThrowZTV();
+            else StartCoroutine(DelayedGetNewQuestion(Color.red, indexResponse));
         }
     }
     private IEnumerator DelayedGetNewQuestion(Color color, int indexResponse)
@@ -136,11 +132,17 @@ public class TriviaManager : MonoBehaviour
         GetNewQuestion();
     }
 
-    private void throwZTV(){
+    private void ThrowZTV(){
         playerLost = true;
         rb.useGravity = true;
         rb.AddForce(new Vector3(0,5,1), ForceMode.Impulse);
         sadFace.SetActive(true);
+        triviaScreen.SetActive(false);
+    }
+
+    private void DefeatBoss(){
+        bossAnimator.SetBool(BossActions.IsDefeated, true);
+        happyFace.SetActive(true);
         triviaScreen.SetActive(false);
     }
 

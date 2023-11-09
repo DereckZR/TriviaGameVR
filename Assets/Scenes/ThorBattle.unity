@@ -2919,12 +2919,16 @@ PrefabInstance:
       objectReference: {fileID: 527926158}
     - target: {fileID: 9142499514932598714, guid: 0d60f9ef8e70ffa4d9abebc9068b4eeb, type: 3}
       propertyPath: delay
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9142499514932598714, guid: 0d60f9ef8e70ffa4d9abebc9068b4eeb, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 1672246723}
+    - target: {fileID: 9142499514932598714, guid: 0d60f9ef8e70ffa4d9abebc9068b4eeb, type: 3}
+      propertyPath: bossAnimator
+      value: 
+      objectReference: {fileID: 2053170652}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7143,7 +7147,13 @@ MonoBehaviour:
   - {fileID: 298322844}
   parentIdle: {fileID: 1091570711}
   parentThrow: {fileID: 473053087}
+  thorAnimator: {fileID: 2053170652}
   throwVelocity: 5
+--- !u!95 &2053170652 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: bd06d31d8a3276c4fa9f8a182af1ad14, type: 3}
+  m_PrefabInstance: {fileID: 1502235587}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2102959265
 PrefabInstance:
   m_ObjectHideFlags: 0
