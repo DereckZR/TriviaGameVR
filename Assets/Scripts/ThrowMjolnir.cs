@@ -11,6 +11,7 @@ public class ThrowMjolnir : MonoBehaviour
     [SerializeField] GameObject parentThrow;
     [SerializeField] Animator thorAnimator;
     [SerializeField] float throwVelocity = 5;
+    [SerializeField] AudioClip fall;
     bool isThrow;
     bool isInHand;
     System.Random random;
@@ -44,6 +45,7 @@ public class ThrowMjolnir : MonoBehaviour
             mjolnir.transform.localPosition = new Vector3(0.001f, 0.002f, 0.001f);
         }
     }
+    //Se usa en un evento de la animacion de ataque de thor
     public void ThrowMjolnirToPlayer()
     {
         objetiveAtacck = objetives[random.Next(0, objetives.Length)]; 
@@ -60,6 +62,11 @@ public class ThrowMjolnir : MonoBehaviour
     public void Damaged()
     {
         thorAnimator.SetBool(TriviaManager.BossActions.IsDamaged, false);
+    }
+
+    public void Fall()
+    {
+        AudioManager.Instance.PlaySound(fall);
     }
     
 }

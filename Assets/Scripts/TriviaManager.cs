@@ -33,6 +33,20 @@ public class TriviaManager : MonoBehaviour
     [SerializeField] GameObject triviaScreen;
     bool oscilation;
     [SerializeField] Animator bossAnimator;
+    [SerializeField] GameObject cameraPlayer;
+    //[SerializeField] bool startShake = false;
+    [SerializeField] AnimationCurve curveShake;
+    [SerializeField] float durationShake = 1f;
+    [SerializeField] Image timer;
+    [SerializeField] float maxTime = 15f;
+    bool timerActive;
+    float currentTime = 15;
+    float currentFillAmount = 0;
+    [SerializeField] AudioClip[] bossAttackSounds;
+    [SerializeField] AudioClip bossHurtSounds;
+    [SerializeField] AudioClip zapZTV;
+    [SerializeField] AudioClip correctZTV;
+    System.Random random;
     public static class BossActions
     {
         public const string 
@@ -45,6 +59,9 @@ public class TriviaManager : MonoBehaviour
 
     private void Start() 
     {
+        random = new System.Random();
+        timer.fillAmount = 1;
+        timerActive = true;
         happyFace.SetActive(false);
         sadFace.SetActive(false);
         rb = ZTV.GetComponent<Rigidbody>();
@@ -52,17 +69,37 @@ public class TriviaManager : MonoBehaviour
         playerLost = false;
         oscilation = false;
         myQuestionList = JsonUtility.FromJson<QuestionList>(jsonTXT.text);
-        GetNewQuestion();
         playerManager = player.GetComponent<PlayerManager>();
         bossManager = boss.GetComponent<BossManager>();
-        //finalScreen.SetActive(false);
+        GetNewQuestion();
     }
-
+    
+    
     private void Update() {
         Lose();
-        ZTVidleanimation();
+        IdleAnimationZTV();
+        if(timerActive) QuestionTimer();
+        /*if(startShake)
+        {
+            StartCoroutine(Shaking());
+            startShake = false;
+        }*/
+        
     }
-    private void ZTVidleanimation()
+    public IEnumerator Shaking()
+    {
+        Vector3 startPosition = cameraPlayer.transform.localPosition;
+        float elapsedTime = 0f;
+        while(elapsedTime < durationShake)
+        {
+            elapsedTime += Time.deltaTime;
+            float Strength = curveShake.Evaluate(elapsedTime / durationShake);
+            cameraPlayer.transform.localPosition = startPosition + Random.insideUnitSphere * Strength;
+            yield return null;
+        }
+        cameraPlayer.transform.localPosition = startPosition;
+    }
+    private void IdleAnimationZTV()
     {
         if(!playerLost)
         {
@@ -83,59 +120,100 @@ public class TriviaManager : MonoBehaviour
     private void GetNewQuestion()
     {
         
-        System.Random random = new System.Random();
         index = random.Next(0, myQuestionList.questions.Length);
         questionUI.text = myQuestionList.questions[index].question;
         answersUI[0].text = myQuestionList.questions[index].options[0];
         answersUI[1].text = myQuestionList.questions[index].options[1];
         answersUI[2].text = myQuestionList.questions[index].options[2];
         answersUI[3].text = myQuestionList.questions[index].options[3];
+        timer.fillAmount = 1;
+        currentTime = maxTime;
+        timerActive = true;
     }
-
-    public void GetResponse(int indexResponse)
+    private void QuestionTimer()
     {
-        if(myQuestionList.questions[index].correctOptionIndex == indexResponse)
+        currentTime -= 1 * Time.deltaTime; 
+        if(currentTime > 0)
         {
-            Debug.Log("correct");
-            bossAnimator.SetBool(BossActions.IsDamaged, true);
-            bossManager.TakeDamage(playerManager.GetDamage());
-            if(bossManager.GetCurrentHealth() <= 0) DefeatBoss();
-            else StartCoroutine(DelayedGetNewQuestion(Color.green, indexResponse));
+            currentFillAmount = currentTime/15;
+            timer.fillAmount = currentFillAmount;
         }
-        else
+        else 
         {
-            Debug.Log("wrong");
+            timerActive = false;
+            AudioManager.Instance.PlaySound(zapZTV);
+            AudioManager.Instance.PlaySound(bossAttackSounds[random.Next(0, bossAttackSounds.Length)]);
             bossAnimator.SetBool(BossActions.IsAttack, true);
             playerManager.TakeDamage(bossManager.GetDamage());
             if(playerManager.GetCurrentHealth() <= 0) ThrowZTV();
-            else StartCoroutine(DelayedGetNewQuestion(Color.red, indexResponse));
+            else StartCoroutine(TimeOver(delay));
         }
+        
     }
-    private IEnumerator DelayedGetNewQuestion(Color color, int indexResponse)
+    private IEnumerator TimeOver(float delayQuestion)
     {
         //Desactivar opciones
         foreach (var button in buttonsUI)
         {
             button.GetComponent<Button>().enabled = false;
+            button.GetComponent<Image>().color = Color.red;
         }
-
-        buttonsUI[indexResponse].GetComponent<Image>().color = color;
-        yield return new WaitForSeconds(delay);
-
+        yield return new WaitForSeconds(delayQuestion);
         //Reactivar opciones
         foreach (var button in buttonsUI)
         {
             button.GetComponent<Button>().enabled = true;
+            button.GetComponent<Image>().color = Color.white;
         }
-
-        buttonsUI[indexResponse].GetComponent<Image>().color = Color.white;
         GetNewQuestion();
+    }
+    public void GetResponse(int indexResponse)
+    {
+        timerActive = false;
+        if(myQuestionList.questions[index].correctOptionIndex == indexResponse)
+        {
+            //Debug.Log("correct");
+            AudioManager.Instance.PlaySound(correctZTV);
+            AudioManager.Instance.PlaySound(bossHurtSounds);
+            bossAnimator.SetBool(BossActions.IsDamaged, true);
+            bossManager.TakeDamage(playerManager.GetDamage());
+            if(bossManager.GetCurrentHealth() <= 0) DefeatBoss();
+            else StartCoroutine(DelayedGetNewQuestion(Color.green, indexResponse, delay/2));
+        }
+        else
+        {
+            //Debug.Log("wrong");
+            AudioManager.Instance.PlaySound(zapZTV);
+            AudioManager.Instance.PlaySound(bossAttackSounds[random.Next(0, bossAttackSounds.Length)]);
+            bossAnimator.SetBool(BossActions.IsAttack, true);
+            playerManager.TakeDamage(bossManager.GetDamage());
+            if(playerManager.GetCurrentHealth() <= 0) ThrowZTV();
+            else StartCoroutine(DelayedGetNewQuestion(Color.red, indexResponse, delay));
+        }
+    }
+    private IEnumerator DelayedGetNewQuestion(Color color, int indexResponse, float delayQuestion)
+    {
+        //Desactivar opciones
+        ToggleTriviaOptions(color, indexResponse, false);
+        yield return new WaitForSeconds(delayQuestion);
+        //Reactivar opciones
+        ToggleTriviaOptions(Color.white, indexResponse, true);
+        GetNewQuestion();
+    }
+    private void ToggleTriviaOptions(Color color, int indexResponse, bool toggle)
+    {
+        foreach (var button in buttonsUI)
+        {
+            button.GetComponent<Button>().enabled = toggle;
+        }
+        buttonsUI[indexResponse].GetComponent<Image>().color = color;
     }
 
     private void ThrowZTV(){
         playerLost = true;
         rb.useGravity = true;
         rb.AddForce(new Vector3(0,5,1), ForceMode.Impulse);
+        timer.enabled = false;
         sadFace.SetActive(true);
         triviaScreen.SetActive(false);
     }

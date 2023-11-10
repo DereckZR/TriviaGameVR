@@ -5,8 +5,12 @@ using UnityEngine;
 public class MjolnirImpact : MonoBehaviour
 {
     [SerializeField] ThrowMjolnir throwMjolnir;
+    [SerializeField] TriviaManager triviaManager;
+    [SerializeField] AudioClip mjolnirImpact;
     private void OnTriggerEnter(Collider other) {
         StartCoroutine(delayReturnMjolnir());
+        StartCoroutine(triviaManager.Shaking());
+        AudioManager.Instance.PlaySound(mjolnirImpact);
     }
 
     private IEnumerator delayReturnMjolnir()
