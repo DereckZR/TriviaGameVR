@@ -12,6 +12,7 @@ public class ThrowMjolnir : MonoBehaviour
     [SerializeField] Animator thorAnimator;
     [SerializeField] float throwVelocity = 5;
     [SerializeField] AudioClip fall;
+    [SerializeField] ThorDefeated thorDefeated;
     bool isThrow;
     bool isInHand;
     System.Random random;
@@ -67,6 +68,10 @@ public class ThrowMjolnir : MonoBehaviour
     public void Fall()
     {
         AudioManager.Instance.PlaySound(fall);
+    }
+    public void IsDefeated()
+    {
+        thorDefeated.StartFinalCinematic();
     }
     
 }

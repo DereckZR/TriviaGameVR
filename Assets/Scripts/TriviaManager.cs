@@ -46,7 +46,10 @@ public class TriviaManager : MonoBehaviour
     [SerializeField] AudioClip bossHurtSounds;
     [SerializeField] AudioClip zapZTV;
     [SerializeField] AudioClip correctZTV;
+    [SerializeField] GameObject zapParticles;
+    [SerializeField] GameObject fireParticles;
     System.Random random;
+
     public static class BossActions
     {
         public const string 
@@ -64,6 +67,7 @@ public class TriviaManager : MonoBehaviour
         timerActive = true;
         happyFace.SetActive(false);
         sadFace.SetActive(false);
+        zapParticles.SetActive(false);
         rb = ZTV.GetComponent<Rigidbody>();
         rb.useGravity = false;
         playerLost = false;
@@ -142,6 +146,7 @@ public class TriviaManager : MonoBehaviour
         {
             timerActive = false;
             AudioManager.Instance.PlaySound(zapZTV);
+            StartCoroutine(ShowZapParticlesZTV());
             AudioManager.Instance.PlaySound(bossAttackSounds[random.Next(0, bossAttackSounds.Length)]);
             bossAnimator.SetBool(BossActions.IsAttack, true);
             playerManager.TakeDamage(bossManager.GetDamage());
@@ -184,6 +189,7 @@ public class TriviaManager : MonoBehaviour
         {
             //Debug.Log("wrong");
             AudioManager.Instance.PlaySound(zapZTV);
+            StartCoroutine(ShowZapParticlesZTV());
             AudioManager.Instance.PlaySound(bossAttackSounds[random.Next(0, bossAttackSounds.Length)]);
             bossAnimator.SetBool(BossActions.IsAttack, true);
             playerManager.TakeDamage(bossManager.GetDamage());
@@ -213,6 +219,7 @@ public class TriviaManager : MonoBehaviour
         playerLost = true;
         rb.useGravity = true;
         rb.AddForce(new Vector3(0,5,1), ForceMode.Impulse);
+        fireParticles.SetActive(false);
         timer.enabled = false;
         sadFace.SetActive(true);
         triviaScreen.SetActive(false);
@@ -222,8 +229,8 @@ public class TriviaManager : MonoBehaviour
         bossAnimator.SetBool(BossActions.IsDefeated, true);
         happyFace.SetActive(true);
         triviaScreen.SetActive(false);
+        boss.SetActive(false);
     }
-
     private void Lose()
     {
         if(playerLost)
@@ -238,5 +245,11 @@ public class TriviaManager : MonoBehaviour
                 playerLost = false;
             }
         }
+    }
+    private IEnumerator ShowZapParticlesZTV()
+    {
+        zapParticles.SetActive(true);
+        yield return new WaitForSeconds(0.3f);
+        zapParticles.SetActive(false);
     }
 }
