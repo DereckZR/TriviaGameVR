@@ -23,11 +23,4 @@ public class ThorReward : MonoBehaviour
         transform.localRotation = 
             Quaternion.Lerp(transform.localRotation, Quaternion.Euler(-90, 90, 0), 0.5f * Time.deltaTime);
     }
-
-
-
-
-    //30 -90
-    //Vector3(196.5,22,23.75)
-    //Vector3(0,200,0)
 }
