@@ -8,7 +8,9 @@ public class MjolnirImpact : MonoBehaviour
     [SerializeField] TriviaManager triviaManager;
     [SerializeField] AudioClip mjolnirImpact;
     private void OnTriggerEnter(Collider other) {
+        transform.GetComponent<BoxCollider>().enabled = false;
         StartCoroutine(delayReturnMjolnir());
+        StartCoroutine(EnableTarget());
         StartCoroutine(triviaManager.Shaking());
         AudioManager.Instance.PlaySound(mjolnirImpact);
     }
@@ -17,5 +19,10 @@ public class MjolnirImpact : MonoBehaviour
     {
         yield return new WaitForSeconds(1f);
         throwMjolnir.ThrowMjolnirToPlayer();
+    }
+    private IEnumerator EnableTarget()
+    {
+        yield return new WaitForSeconds(2.5f);
+        transform.GetComponent<BoxCollider>().enabled = true;
     }
 }
