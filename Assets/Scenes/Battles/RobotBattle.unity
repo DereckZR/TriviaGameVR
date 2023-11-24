@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0023363254, g: 0.005516601, b: 0.0063183913, a: 1}
+  m_IndirectSpecularColor: {r: 0.002358727, g: 0.005512038, b: 0.00632068, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1010,6 +1010,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: c7e4d85f2c6c49f4b851c7ceff298c1d, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: c7e4d85f2c6c49f4b851c7ceff298c1d, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: f2158a081e262a746bb04d50fbf074e9, type: 2}
@@ -1020,7 +1024,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c7e4d85f2c6c49f4b851c7ceff298c1d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1492614985}
   m_SourcePrefab: {fileID: 100100000, guid: c7e4d85f2c6c49f4b851c7ceff298c1d, type: 3}
 --- !u!4 &78240609 stripped
 Transform:
@@ -15320,6 +15327,33 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 430084, guid: 43373d8b4f572cf468859751b9dcbbfd, type: 3}
   m_PrefabInstance: {fileID: 1489397126}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1492614982 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: c7e4d85f2c6c49f4b851c7ceff298c1d, type: 3}
+  m_PrefabInstance: {fileID: 78240608}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &1492614985
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1492614982}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 2534964839176971238, guid: c7e4d85f2c6c49f4b851c7ceff298c1d, type: 3}
 --- !u!1001 &1495304128
 PrefabInstance:
   m_ObjectHideFlags: 0
