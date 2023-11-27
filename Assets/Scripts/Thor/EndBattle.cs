@@ -5,18 +5,19 @@ using UnityEngine;
 public class EndBattle : MonoBehaviour
 {
     [SerializeField] OVRGrabbable grab;
-    [SerializeField] ChangeSceneManager changeSceneManager;
+    
     bool flag = true;
     private void Update() {
         if(grab.isGrabbed && flag)
         {
             flag = false;
-            StartCoroutine(WaitToChange());
+            StartCoroutine(GoToLobby());
         }
     }
-    private IEnumerator WaitToChange()
+    private IEnumerator GoToLobby()
     {
         yield return new WaitForSeconds(5);
-        changeSceneManager.GoToScene(0);
+        ChangeSceneManager.Instance.GoToScene(0);
+        AudioManager.Instance.ChangeMusic(ChangeSceneManager.Instance.sountrack[0]);
     }
 }
