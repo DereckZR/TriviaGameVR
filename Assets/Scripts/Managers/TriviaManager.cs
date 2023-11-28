@@ -180,10 +180,14 @@ public class TriviaManager : MonoBehaviour
             //Debug.Log("correct");
             AudioManager.Instance.PlaySound(correctZTV);
             AudioManager.Instance.PlaySound(bossHurtSounds);
-            bossAnimator.SetBool(BossActions.IsDamaged, true);
             bossManager.TakeDamage(playerManager.GetDamage());
             if(bossManager.GetCurrentHealth() <= 0) DefeatBoss();
-            else StartCoroutine(DelayedGetNewQuestion(Color.green, indexResponse, delay/2));
+            else 
+            {
+                bossAnimator.SetBool(BossActions.IsDamaged, true);
+                StartCoroutine(DelayedGetNewQuestion(Color.green, indexResponse, delay/2));
+            }
+            
         }
         else
         {
