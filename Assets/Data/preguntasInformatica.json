@@ -1,0 +1,154 @@
+{
+  "questions": [
+    {
+      "question": "¿Cuál de las siguientes opciones es una unidad de almacenamiento de datos de estado sólido?",
+      "options": ["RAM", "Disco Duro", "SSD", "CD-ROM"],
+      "correctOptionIndex": 2
+    },
+    {
+      "question": "¿Qué componente de hardware se encarga de procesar la información y realizar cálculos en una computadora?",
+      "options": ["RAM", "GPU", "CPU", "Disco Duro"],
+      "correctOptionIndex": 2
+    },
+    {
+      "question": "¿Qué identifica de manera única a un dispositivo en una red?",
+      "options": [
+        "Contraseña",
+        "Dirección IP",
+        "Nombre de usuario",
+        "Tipo de dispositivo"
+      ],
+      "correctOptionIndex": 1
+    },
+    {
+      "question": "¿Qué es un bucle en programación?",
+      "options": [
+        "Un error en el código",
+        "Una instrucción única",
+        "Instrucciones que se repiten",
+        "Una variable"
+      ],
+      "correctOptionIndex": 2
+    },
+    {
+      "question": "¿Cuál de los siguientes es un lenguaje de programación?",
+      "options": ["HTML", "Python", "CSS", "WPF"],
+      "correctOptionIndex": 1
+    },
+    {
+      "question": "¿Qué significa la sigla CPU?",
+      "options": [
+        "Central Processing Unit",
+        "Computer Personal Unit",
+        "Central Processor Unit",
+        "Central Personal Unit"
+      ],
+      "correctOptionIndex": 0
+    },
+    {
+      "question": "¿Cuál es el lenguaje de programación diseñado para la creación de páginas web interactivas?",
+      "options": ["Python", "JavaScript", "Java", "C++"],
+      "correctOptionIndex": 1
+    },
+    {
+      "question": "¿Cuál de las siguientes opciones NO es un sistema operativo?",
+      "options": ["Windows", "Linux", "MacOS", "Microsoft"],
+      "correctOptionIndex": 3
+    },
+    {
+      "question": "¿Cuál es el propósito principal de un firewall?",
+      "options": [
+        "Proteger contra virus",
+        "Bloquear el acceso no autorizado a una red",
+        "Acelerar la velocidad de internet",
+        "Almacenar archivos importantes"
+      ],
+      "correctOptionIndex": 1
+    },
+    {
+      "question": "¿Qué es un archivo con extensión '.png'?",
+      "options": [
+        "Un archivo de audio",
+        "Una imagen",
+        "Un documento de texto",
+        "Un archivo ejecutable"
+      ],
+      "correctOptionIndex": 1
+    },
+    {
+      "question": "¿Cuál de las siguientes opciones es un ejemplo de software de código abierto?",
+      "options": ["Windows", "Photoshop", "Linux", "Unity"],
+      "correctOptionIndex": 2
+    },
+    {
+      "question": "¿Cuál es el propósito de la URL en un navegador web?",
+      "options": [
+        "Mostrar anuncios",
+        "Identificar la dirección de una página web",
+        "Ejecutar scripts de JavaScript",
+        "Almacenar cookies"
+      ],
+      "correctOptionIndex": 1
+    },
+    {
+      "question": "¿Qué es un bug en programación?",
+      "options": [
+        "Un insecto en la computadora",
+        "Un error en el código de programación",
+        "Un dispositivo de entrada",
+        "Un virus informático"
+      ],
+      "correctOptionIndex": 1
+    },
+    {
+      "question": "¿Qué es un servidor web?",
+      "options": [
+        "Un programa antivirus",
+        "Un lugar para almacenar archivos",
+        "Un software que sirve páginas web a los usuarios",
+        "Un tipo de navegador"
+      ],
+      "correctOptionIndex": 2
+    },
+    {
+      "question": "¿Cuál de las siguientes opciones es un lenguaje de marcado utilizado para estructurar contenido web?",
+      "options": ["Java", "CSS", "JavaScript", "HTML"],
+      "correctOptionIndex": 3
+    },
+    {
+      "question": "¿Qué significa la sigla HTML en desarrollo web?",
+      "options": [
+        "Hypertext Markup Language",
+        "Hyperlink and Text Management Language",
+        "High-Level Text Manipulation Language",
+        "Home Tool for Managing Links"
+      ],
+      "correctOptionIndex": 0
+    },
+    {
+      "question": "¿Que es un Binary digit?",
+      "options": ["Bit", "Byte", "Medida de información", "Megabyte"],
+      "correctOptionIndex": 0
+    },
+    {
+      "question": "¿Unidades qué se utilizan para medir las cantidades de los datos informáticos?",
+      "options": ["Medida de información", "Byte", "Bit", "Internet"],
+      "correctOptionIndex": 1
+    },
+    {
+      "question": "¿Es la combinación de ocho dígitos compuestos de ceros o unos, que equivale a un carácter de letra?",
+      "options": ["ASCII", "Byte", "Bit", "Microsoft Word"],
+      "correctOptionIndex": 1
+    },
+    {
+      "question": "¿Unidad de medida que corresponde a 1 048 576 bytes = 1024 KB?",
+      "options": ["Gigabyte", "MegaByte", "Internet", "Kilobyte"],
+      "correctOptionIndex": 1
+    },
+    {
+      "question": "¿Unidad de almacenamiento de información, que nos permite almacenar 13.3 años de video HD?",
+      "options": ["Petabyte", "Geopbyte", "Bit (Binary digit)", "MegaByte"],
+      "correctOptionIndex": 0
+    }
+  ]
+}

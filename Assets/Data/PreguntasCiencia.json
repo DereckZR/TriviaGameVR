@@ -1,0 +1,274 @@
+{
+    "questions": [
+        {
+            "question": "¿Cuál es el proceso mediante el cual las plantas producen su propio alimento?",
+            "options": [
+                "Fotosíntesis",
+                "Respiración celular",
+                "Mitosis",
+                "Digestión"
+            ],
+            "correctOptionIndex": 0
+        },
+        {
+            "question": "¿Qué componente sanguíneo es responsable de transportar el oxígeno?",
+            "options": [
+                "Plaquetas",
+                "Glóbulos rojos",
+                "Plasma",
+                "Glóbulos blancos"
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "question": "¿Cuál es el planeta más grande del sistema solar?",
+            "options": [
+                "Tierra",
+                "Júpiter",
+                "Marte",
+                "Venus"
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "question": "¿Quién descubrió la penicilina en 1928?",
+            "options": [
+                "Alexander Fleming",
+                "Louis Pasteur",
+                "Marie Curie",
+                "Jonas Salk"
+            ],
+            "correctOptionIndex": 0
+        },
+        {
+            "question": "¿Cuántos huesos tiene el cuerpo humano adulto?",
+            "options": [
+                "206",
+                "214",
+                "192",
+                "220"
+            ],
+            "correctOptionIndex": 0
+        },
+        {
+            "question": "¿Qué gas es esencial para la fotosíntesis de las plantas?",
+            "options": [
+                "Dióxido de carbono",
+                "Oxígeno",
+                "Nitrógeno",
+                "Hidrógeno"
+            ],
+            "correctOptionIndex": 0
+        },
+        {
+            "question": "¿En qué año el ser humano llegó por primera vez a la Luna?",
+            "options": [
+                "1965",
+                "1969",
+                "1972",
+                "1980"
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "question": "¿Cuál es el componente principal del sistema nervioso central?",
+            "options": [
+                "Neuronas",
+                "Médula espinal",
+                "Cerebro",
+                "Ganglios nerviosos"
+            ],
+            "correctOptionIndex": 2
+        },
+        {
+            "question": "¿Cuál es la enfermedad viral transmitida por mosquitos que ha sido asociada con microcefalia en recién nacidos?",
+            "options": [
+                "Dengue",
+                "Zika",
+                "Chikungunya",
+                "Malaria"
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "question": "¿Cuál es la unidad básica de la herencia genética?",
+            "options": [
+                "Gen",
+                "Cromosoma",
+                "Ácido ribonucleico",
+                "Nucleótido"
+            ],
+            "correctOptionIndex": 0
+        },
+        {
+            "question": "¿Qué científico propuso la teoría heliocéntrica, que postula que la Tierra y los demás planetas giran alrededor del Sol?",
+            "options": [
+                "Galileo Galilei",
+                "Johannes Kepler",
+                "Nicolas Copérnico",
+                "Isaac Newton"
+            ],
+            "correctOptionIndex": 2
+        },
+        {
+            "question": "¿Cuál es la hormona responsable de regular los niveles de glucosa en sangre?",
+            "options": [
+                "Insulina",
+                "Adrenalina",
+                "Progesterona",
+                "Testosterona"
+            ],
+            "correctOptionIndex": 0
+        },
+        {
+            "question": "¿Cuál es el proceso de división celular que da lugar a las células sexuales?",
+            "options": [
+                "Mitosis",
+                "Meiosis",
+                "Citocinesis",
+                "Interfase"
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "question": "¿En qué año se publicó la teoría de la relatividad de Albert Einstein?",
+            "options": [
+                "1905",
+                "1915",
+                "1925",
+                "1935"
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "question": "¿Qué científico formuló las leyes del movimiento y la ley de la gravitación universal?",
+            "options": [
+                "Isaac Newton",
+                "Galileo Galilei",
+                "Johannes Kepler",
+                "Albert Einstein"
+            ],
+            "correctOptionIndex": 0
+        },
+        {
+            "question": "¿Cuál es el proceso biológico por el cual los organismos convierten la luz en energía química?",
+            "options": [
+                "Fotosíntesis",
+                "Respiración celular",
+                "Fermentación",
+                "Osmosis"
+            ],
+            "correctOptionIndex": 0
+        },
+        {
+            "question": "¿Quién formuló la teoría de la relatividad especial?",
+            "options": [
+                "Isaac Newton",
+                "Albert Einstein",
+                "Max Planck",
+                "Niels Bohr"
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "question": "¿Cuál es el hueso más largo del cuerpo humano?",
+            "options": [
+                "Fémur",
+                "Tibia",
+                "Húmero",
+                "Radio"
+            ],
+            "correctOptionIndex": 0
+        },
+        {
+            "question": "¿Qué científico postuló la teoría de la evolución por selección natural?",
+            "options": [
+                "Charles Darwin",
+                "Gregor Mendel",
+                "Jean-Baptiste Lamarck",
+                "Alfred Russel Wallace"
+            ],
+            "correctOptionIndex": 0
+        },
+        {
+            "question": "¿Quién es conocido como el 'padre de la medicina' en la antigua Grecia?",
+            "options": [
+                "Hipócrates",
+                "Galen",
+                "Aristóteles",
+                "Hippolyte Cloquet"
+            ],
+            "correctOptionIndex": 0
+        },
+        {
+            "question": "¿Cuál es el ácido presente en los cítricos como limones y naranjas?",
+            "options": [
+                "Ácido cítrico",
+                "Ácido ascórbico",
+                "Ácido acético",
+                "Ácido láctico"
+            ],
+            "correctOptionIndex": 0
+        },
+        {
+            "question": "¿Qué científico propuso la teoría de la relatividad general?",
+            "options": [
+                "Isaac Newton",
+                "Niels Bohr",
+                "Albert Einstein",
+                "Stephen Hawking"
+            ],
+            "correctOptionIndex": 2
+        },
+        {
+            "question": "¿Cuál es el componente principal del sistema circulatorio humano?",
+            "options": [
+                "Corazón",
+                "Pulmón",
+                "Vena",
+                "Arteria"
+            ],
+            "correctOptionIndex": 0
+        },
+        {
+            "question": "¿Cuál es el proceso mediante el cual el cuerpo convierte los alimentos en energía?",
+            "options": [
+                "Digestión",
+                "Absorción",
+                "Metabolismo",
+                "Excreción"
+            ],
+            "correctOptionIndex": 2
+        },
+        {
+            "question": "¿Cuál es el mineral esencial para la formación de huesos y dientes?",
+            "options": [
+                "Hierro",
+                "Calcio",
+                "Zinc",
+                "Magnesio"
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "question": "¿Cuál es el gas responsable del color rojo de Marte?",
+            "options": [
+                "Oxígeno",
+                "Metano",
+                "Dióxido de carbono",
+                "Hidrógeno"
+            ],
+            "correctOptionIndex": 2
+        },
+        {
+            "question": "¿Cuál es el proceso biológico mediante el cual los organismos obtienen energía de la luz solar?",
+            "options": [
+                "Respiración celular",
+                "Fotosíntesis",
+                "Fermentación",
+                "Digestión"
+            ],
+            "correctOptionIndex": 1
+        }
+    ]
+}

@@ -27,9 +27,10 @@ public class AnimRobot : MonoBehaviour
 
     private void Update()
     {
-
-        transform.localPosition = new Vector3(0, 0, 0);
-        transform.localRotation = Quaternion.Euler(0,0,0);
-
+        if(!robotAnimator.GetBool(TriviaManager.BossActions.IsDefeated))
+        {
+            transform.localPosition = new Vector3(0, 0, 0);
+            transform.localRotation = Quaternion.Euler(0,0,0);
+        }
     }
 }

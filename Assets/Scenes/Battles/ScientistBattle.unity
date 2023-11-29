@@ -9358,6 +9358,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1184105386}
     - target: {fileID: 9142499514932598714, guid: 0d60f9ef8e70ffa4d9abebc9068b4eeb, type: 3}
+      propertyPath: jsonTXT
+      value: 
+      objectReference: {fileID: 4900000, guid: cc1e253823c4f1745b1e03900f3f38cd, type: 3}
+    - target: {fileID: 9142499514932598714, guid: 0d60f9ef8e70ffa4d9abebc9068b4eeb, type: 3}
       propertyPath: bossAnimator
       value: 
       objectReference: {fileID: 1017000434}

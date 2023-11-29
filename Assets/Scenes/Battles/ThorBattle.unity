@@ -426,7 +426,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grab: {fileID: 476800717}
-  changeSceneManager: {fileID: 46284213}
 --- !u!114 &46284213
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -439,7 +438,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04e0f9da024959e48ad27001b4aabcef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fade: {fileID: 624339888}
+  sountrack: []
 --- !u!4 &46284214
 Transform:
   m_ObjectHideFlags: 0
@@ -2789,17 +2788,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!114 &624339888 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4895438678081256197, guid: 0d60f9ef8e70ffa4d9abebc9068b4eeb, type: 3}
-  m_PrefabInstance: {fileID: 715779268}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f64413e7a4aa844c9963d8717b712d1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &638020821 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 997879032630091604, guid: 0d60f9ef8e70ffa4d9abebc9068b4eeb, type: 3}
@@ -3322,6 +3310,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1672246723}
+    - target: {fileID: 9142499514932598714, guid: 0d60f9ef8e70ffa4d9abebc9068b4eeb, type: 3}
+      propertyPath: jsonTXT
+      value: 
+      objectReference: {fileID: 4900000, guid: 7ff42f12f5d72d541ac7aa919ad0c447, type: 3}
     - target: {fileID: 9142499514932598714, guid: 0d60f9ef8e70ffa4d9abebc9068b4eeb, type: 3}
       propertyPath: bossAnimator
       value: 

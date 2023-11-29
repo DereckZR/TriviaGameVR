@@ -1,0 +1,99 @@
+{
+    "questions": [
+      {
+        "question": "¿En qué año comenzó la Primera Guerra Mundial?",
+        "options": ["1914", "1920", "1939", "1945"],
+        "correctOptionIndex": 0
+      },
+      {
+        "question": "¿Quién fue el primer presidente de Estados Unidos?",
+        "options": ["George Washington", "Thomas Jefferson", "Abraham Lincoln", "John Adams"],
+        "correctOptionIndex": 0
+      },
+      {
+        "question": "¿En qué año terminó la Segunda Guerra Mundial?",
+        "options": ["1945", "1939", "1940", "1942"],
+        "correctOptionIndex": 0
+      },
+      {
+        "question": "¿Cuál fue la primera civilización en Mesopotamia?",
+        "options": ["Sumerios", "Acadios", "Babilonios", "Asirios"],
+        "correctOptionIndex": 0
+      },
+      {
+        "question": "¿Quién fue el líder de la Revolución Rusa en 1917?",
+        "options": ["Lenin", "Stalin", "Trotsky", "Nicholas II"],
+        "correctOptionIndex": 0
+      },
+      {
+        "question": "¿En qué año se firmó la Declaración de Independencia de Estados Unidos?",
+        "options": ["1776", "1789", "1800", "1812"],
+        "correctOptionIndex": 0
+      },
+      {
+        "question": "¿Cuál fue el período conocido como la Revolución Industrial?",
+        "options": ["Siglo XVIII", "Siglo XIX", "Siglo XX", "Siglo XVII"],
+        "correctOptionIndex": 1
+      },
+      {
+        "question": "¿Quién fue el emperador romano conocido por su código legal?",
+        "options": ["César Augusto", "Nerón", "Marco Aurelio", "Justiniano"],
+        "correctOptionIndex": 3
+      },
+      {
+        "question": "¿En qué año se descubrió América por Cristóbal Colón?",
+        "options": ["1492", "1452", "1510", "1533"],
+        "correctOptionIndex": 0
+      },
+      {
+        "question": "¿Quién fue Simón Bolívar?",
+        "options": ["Presidente de Bolivia", "Libertador de América del Sur", "Conquistador español", "Explorador inglés"],
+        "correctOptionIndex": 1
+      },
+      {
+        "question": "¿Cuándo se llevó a cabo la independencia de Bolivia?",
+        "options": ["1809", "1825", "1850", "1880"],
+        "correctOptionIndex": 1
+      },
+      {
+        "question": "¿Cuál fue la batalla clave en la independencia de Bolivia?",
+        "options": ["Batalla de Ayacucho", "Batalla de Junín", "Batalla de Tumusla", "Batalla de Pari"],
+        "correctOptionIndex": 0
+      },
+      {
+        "question": "¿Quién fue el primer presidente de Bolivia?",
+        "options": ["Andrés de Santa Cruz", "Simón Bolívar", "José Ballivián", "Antonio José de Sucre"],
+        "correctOptionIndex": 1
+      },
+      {
+        "question": "¿En qué año se fundó la República de Bolivia?",
+        "options": ["1810", "1825", "1830", "1845"],
+        "correctOptionIndex": 1
+      },
+      {
+        "question": "¿Qué guerra enfrentó Bolivia contra Paraguay en el siglo XIX?",
+        "options": ["Guerra del Chaco", "Guerra del Pacífico", "Guerra de la Independencia", "Guerra de las Malvinas"],
+        "correctOptionIndex": 1
+      },
+      {
+        "question": "¿Cuál fue el líder indígena boliviano que encabezó la resistencia contra la colonización española?",
+        "options": ["Túpac Katari", "Bartolina Sisa", "Manko Kapak", "Ruperta Condori"],
+        "correctOptionIndex": 0
+      },
+      {
+        "question": "¿En qué año se nacionalizó el petróleo en Bolivia?",
+        "options": ["1937", "1952", "1960", "1971"],
+        "correctOptionIndex": 3
+      },
+      {
+        "question": "¿Cuál es la capital de Bolivia?",
+        "options": ["Sucre", "La Paz", "Cochabamba", "Santa Cruz"],
+        "correctOptionIndex": 1
+      },
+      {
+        "question": "¿Quién fue la figura central en la Revolución de 1952 en Bolivia?",
+        "options": ["Víctor Paz Estenssoro", "Hernán Siles Zuazo", "Gualberto Villarroel", "René Barrientos"],
+        "correctOptionIndex": 0
+      }
+    ]
+  }
