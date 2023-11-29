@@ -47,4 +47,5 @@ MonoBehaviour:
   sountrack:
   - {fileID: 8300000, guid: 6d0396bd1480ba24ab26618ba36cc1f6, type: 3}
   - {fileID: 8300000, guid: 1d79f259230a3734ca5c6984aebb60b9, type: 3}
-  - {fileID: 8300000, guid: a5df35569c128d9488295b5099895019, type: 3}
+  - {fileID: 8300000, guid: 94a0c2a8d6fdc654b931e1436eb45c8f, type: 3}
+  - {fileID: 8300000, guid: 8b0964691a86c5543b5c4fffcdfb697a, type: 3}

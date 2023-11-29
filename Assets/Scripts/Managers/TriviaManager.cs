@@ -49,6 +49,10 @@ public class TriviaManager : MonoBehaviour
     [SerializeField] GameObject zapParticles;
     [SerializeField] GameObject fireParticles;
     System.Random random;
+    int indexPrevQuestion;
+    int indexNewQuestion;
+    int prevRandom;
+    int newRandom;
 
     public static class BossActions
     {
@@ -63,6 +67,10 @@ public class TriviaManager : MonoBehaviour
     private void Start() 
     {
         random = new System.Random();
+        indexPrevQuestion = -1;
+        indexNewQuestion = 0;
+        newRandom = 0;
+        prevRandom = 0;
         timer.fillAmount = 1;
         timerActive = true;
         happyFace.SetActive(false);
@@ -83,12 +91,6 @@ public class TriviaManager : MonoBehaviour
         Lose();
         IdleAnimationZTV();
         if(timerActive) QuestionTimer();
-        /*if(startShake)
-        {
-            StartCoroutine(Shaking());
-            startShake = false;
-        }*/
-        
     }
     public IEnumerator Shaking()
     {
@@ -123,8 +125,11 @@ public class TriviaManager : MonoBehaviour
     }
     private void GetNewQuestion()
     {
-        
-        index = random.Next(0, myQuestionList.questions.Length);
+        do 
+            indexNewQuestion = random.Next(0, myQuestionList.questions.Length);
+        while(indexNewQuestion == indexPrevQuestion);
+        indexPrevQuestion = indexNewQuestion;
+        index = indexNewQuestion;
         questionUI.text = myQuestionList.questions[index].question;
         answersUI[0].text = myQuestionList.questions[index].options[0];
         answersUI[1].text = myQuestionList.questions[index].options[1];
@@ -147,7 +152,10 @@ public class TriviaManager : MonoBehaviour
             timerActive = false;
             AudioManager.Instance.PlaySound(zapZTV);
             StartCoroutine(ShowZapParticlesZTV());
-            AudioManager.Instance.PlaySound(bossAttackSounds[random.Next(0, bossAttackSounds.Length)]);
+            newRandom = random.Next(0, bossAttackSounds.Length);
+            if (bossAttackSounds.Length > 1) while(newRandom == prevRandom) newRandom = random.Next(0, bossAttackSounds.Length);
+            prevRandom = newRandom;
+            AudioManager.Instance.PlaySound(bossAttackSounds[newRandom]);
             bossAnimator.SetBool(BossActions.IsAttack, true);
             playerManager.TakeDamage(bossManager.GetDamage());
             if(playerManager.GetCurrentHealth() <= 0) ThrowZTV();
@@ -194,7 +202,10 @@ public class TriviaManager : MonoBehaviour
             //Debug.Log("wrong");
             AudioManager.Instance.PlaySound(zapZTV);
             StartCoroutine(ShowZapParticlesZTV());
-            AudioManager.Instance.PlaySound(bossAttackSounds[random.Next(0, bossAttackSounds.Length)]);
+            newRandom = random.Next(0, bossAttackSounds.Length);
+            if (bossAttackSounds.Length > 1) while(newRandom == prevRandom) newRandom = random.Next(0, bossAttackSounds.Length);
+            prevRandom = newRandom;
+            AudioManager.Instance.PlaySound(bossAttackSounds[newRandom]);
             bossAnimator.SetBool(BossActions.IsAttack, true);
             playerManager.TakeDamage(bossManager.GetDamage());
             if(playerManager.GetCurrentHealth() <= 0) ThrowZTV();
